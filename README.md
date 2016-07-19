@@ -23,3 +23,8 @@ Open the workspace, then build and run on your development device.
 More
 ----
 The core for generating passes is avaliable at: https://github.com/128keaton/PassServe
+
+----
+
+修改demo路径错误的问题
+
