@@ -56,6 +56,15 @@
     
     [fileManager copyItemAtPath:resourcePath toPath:documentsDirectory error:&error];
     
+    //fix it
+    for (NSString *passFile in passesToBeCopied) {
+        if ([passFile hasSuffix:@".pkpass"]) {
+            NSString *sp = [resourcePath stringByAppendingPathComponent:passFile];
+            NSString *dp = [documentsDirectory stringByAppendingPathComponent:passFile];
+            [fileManager copyItemAtPath:sp toPath:dp error:&error];
+            NSLog(@"复制文件：\n%@\n--->\n%@ \n%@", sp, dp, error);
+        }
+    }
     
     
     //3 loop over the resource files
